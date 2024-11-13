@@ -1,7 +1,7 @@
 import React from "react";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
-import './auth.css';
+import '../../App.css';
 
 function Logout() {
   const handleLogout = async () => {
@@ -13,7 +13,7 @@ function Logout() {
     }
   };
 
-  return <button onClick={handleLogout}>Logout</button>;
+  return <button onClick={handleLogout} className="nav-btn nav-signup">Logout</button>;
 }
 
 export default Logout;

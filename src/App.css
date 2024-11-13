@@ -1,38 +1,252 @@
-.App {
-  text-align: center;
+body {
+  height: 100vh;
+  margin: 0;
+  /* background-color: #473b4f; */
+  background: linear-gradient(90deg,  #786386, #473b4f) no-repeat;
+  font-family: Arial, sans-serif;
+  position: relative;  
+  color: white;
+  font-family: "Nuosu SIL", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.verticalStack {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.container {
+  width: 350px;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  align-items: left;
+  padding-top: 20px;
+  margin-top: 15px;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+.back-arrow {
+  margin: 0;
+  cursor: pointer;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  display: flex;
+}
+
+.back-arrow-icon {
+  margin: 0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-text {
+  margin: 0;
+  text-align: left;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.subtext {
+  font-size: 14px;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.subtext a {
+  color: black;
+}
+
+.header {
+  margin-bottom: 10px;
+}
+
+.input-group {
+  width: 100%;
+  margin-bottom: 1cap;
+  text-align: left;
+}
+
+.input-label {
+  font-size: 14px;
+}
+
+.input-field {
+  width: 94.5%;
+  padding: 10px;
+  border: 1px solid e#bbbbbb;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+} 
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #000000;
+  border: 1px solid #302d32;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.submit-btn:hover {
+  color: #fff;
+  background-color: #302d32;
+}
+
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  padding-right: 40px;
+  font-size: 16px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+  outline: none;
+}
+
+.toggle-password-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-45%);
+  cursor: pointer;
+  color: #302d32;
+  font-size: 18px;
+}
+
+
+/* Landing Page */
+.landing-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style for the welcome message */
+.header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.header .text {
+  font-size: 1.5rem;
+}
+
+.header .underline {
+  width: 100px;
+  height: 2px;
+  background-color: #4285f4;
+  margin: 10px auto;
+}
+
+.link-button {
+  padding: 0.5rem 1rem;
+  background-color: #4285f4;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.link-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  background-color: white;
+  color: black;
+}
+
+.logo {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  cursor: default;
+  font-family: "Nuosu SIL", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #000000;
+  border: 1px solid #302d32;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.submit-btn:hover {
+  color: #fff;
+  background-color: #302d32;
+}
+
+.link-button {
+  padding: 0.5rem 1rem;
+  background-color: #4285f4;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.link-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-btn {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  border: 1px solid #000000;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.nav-signup {
+  background-color: #302d32;
+  cursor: pointer;
+  color: white;
+}
+.nav-signup:hover {
+  background-color: #1e1c1f;
+}
+
+.nav-login {
+  background-color: white;
+  color: black;
+}
+.nav-login:hover {
+  background-color: rgb(242, 242, 242);
 }
