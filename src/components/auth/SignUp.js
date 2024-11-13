@@ -1,59 +1,70 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase";
-import email_icon from "../assets/email.png";
-import password_icon from "../assets/password.png";
-import './auth.css';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye } from "@fortawesome/free-solid-svg-icons";
 
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      console.log("User signed up");
-      setEmail("");
-      setPassword("");
-      setError(null);
-    } catch (error) {
-      setError(error.message);
-      console.error("Error signing up:", error);
+    } catch (err) {
+      setError(err.message);
     }
   };
 
   return (
-    <form onSubmit={handleSignUp}>
-      <div className="input">
-        <img src={email_icon} alt="Email" />
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email ID"
-          required
-        />
+    <div className="container">
+      <div className="header">
+        <h2 className="header-text">Create an account</h2>
+        <p className="subtext">
+          Already have an account? <a href="/login">Log in here.</a>
+        </p>
       </div>
 
-      <div className="input">
-        <img src={password_icon} alt="Password" />
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-        />
-      </div>
+      <form onSubmit={handleSignUp} className="form">
+        <div className="input-group">
+          <label htmlFor="email" className="input-label">Email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="input-field"
+          />
+        </div>
+        
+        <div className="input-group">
+          <label htmlFor="password" className="input-label">Password</label>
+          <div className="password-container">
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              // placeholder="Password"
+              required
+              className="input-field"
+            />
+            <FontAwesomeIcon
+              icon={faEye}
+              onClick={() => setShowPassword(!showPassword)}
+              className="toggle-password-icon"
+            />
+          </div>
+        </div>
 
-      {error && <p>{error}</p>}
-
-      <div className="submit-container">
-        <button type="submit" className="submit">Sign Up</button>
-      </div>
-    </form>
+        {error && <p className="error-text">{error}</p>}
+        <button type="submit" className="submit-btn">Sign Up</button>
+      </form>
+    </div>
   );
 }
 
