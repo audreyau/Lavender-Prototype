@@ -58,17 +58,17 @@ Make sure you have the following installed:
 - After signing up, they can **log in** to their account.
 - Users can **log out** at any time.
 
-## Folder Structure
+## Modified Files
 
 ```
 /src
-  |-- components
+  |-- components/auth
       |-- Login.js
-      |-- Signup.js
-      |-- Dashboard.js
-  |-- firebase.js  # Firebase configuration
+      |-- Logout.js
+      |-- SignUp.js
+  |-- App.css
   |-- App.js
-  |-- index.js
+  |-- Layout.js
 ```
 
 ## Future Enhancements
